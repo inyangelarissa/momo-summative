@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MTN MoMo SMS Dashboard</title>
+  <link rel="stylesheet" href="home.css" />
+</head>
+<body>
+  <div class="layout">
+    <aside class="sidebar">
+      <div class="logo">
+        <img src="logo.svg" alt="MoMo Logo" class="logo-icon" />
+        <div>
+          <h1 class="logo-title">MoMo</h1>
+          <p class="logo-sub">Dashboard</p>
+        </div>
+      </div>
+      <nav class="menu">
+        <a href="#" class="menu-item active">Dashboard</a>
+        <a href="#" class="menu-item">Transactions</a>
+        <a href="#" class="menu-item">AI Analysis</a>
+        <a href="#" class="menu-item">Settings</a>
+      </nav>
+    </aside>
+    <main class="main">
+      
+        <header>MTN MoMo Financial Dashboard</header>
+
+
+      <section class="upload-section">
+        <div class="upload-box">
+          <div class="upload-icon">&#8682;</div>
+          <p class="upload-text">Drag and drop your XML file here</p>
+          <p class="upload-subtext">or click to browse files</p>
+          <button class="btn-upload">Select XML File</button>
+        </div>
+      </section>
+
+  <title>MoMo Dashboard - Charts</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background-color: #f6f7f9;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    header {
+      background-color: #003366;
+      color: white;
+      padding: 15px 20px;
+      text-align: center;
+      font-size: 1.5em;
+      font-weight: bold;
+    }
+
+    .container {
+      padding: 20px;
+      max-width: 1400px;
+      margin: auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      flex-grow: 1;
+    }
+
+    h2 {
+      margin-bottom: 10px;
+      color: #003366;
+    }
+
+    .totals {
+      display: flex;
+      justify-content: center;
+      gap: 50px;
+      margin-bottom: 30px;
+      font-size: 1.2em;
+    }
+
+    .totals div {
+      background: #fff;
+      padding: 15px 30px;
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .charts-row {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 30px;
+      width: 100%;
+    }
+
+    .chart-container {
+      flex: 1 1 30%;
+      min-width: 300px;
+      background: #fff;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+      text-align: center;
+    }
+
+    canvas {
+      max-width: 100%;
+    }
+
+    footer {
+      background-color: #e3e7eb;
+      color: rgb(51, 50, 102);
+      text-align: center;
+      padding: 15px 10px;
+      font-size: 0.9em;
+    }
+  </style>
+</head>
+<body>
+  <header>
+     <h2>Financial Dashboard</h2>
+        <p>Track, analyze, and optimize your financial transactions</p>
+      </header>
+
+  <div class="container">
+    <h2>Financial Transaction Insights</h2>
+
+    <div class="totals">
+      <div><strong>Total Income:</strong> RWF 3,500,000</div>
+      <div><strong>Total Expenses:</strong> RWF 2,100,000</div>
+    </div>
+
+    <div class="charts-row">
+      <div class="chart-container">
+        <h3>Total Transaction Volume by Type</h3>
+        <canvas id="typeChart"></canvas>
+      </div>
+
+      <div class="chart-container">
+        <h3>Monthly Transaction Summary</h3>
+        <canvas id="monthlyChart"></canvas>
+      </div>
+
+      <div class="chart-container">
+        <h3>Payment vs Deposit Distribution</h3>
+        <canvas id="pieChart"></canvas>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    &copy; 2025 MTN MoMo. All rights reserved.
+  </footer>
+</body>
+</main>
+  <script>
+    const typeChart = new Chart(document.getElementById('typeChart'), {
+      type: 'bar',
+      data: {
+        labels: ['Airtime', 'Utilities', 'Bank Transfer', 'Cashout', 'Others'],
+        datasets: [{
+          label: 'Transaction Volume',
+          data: [500, 300, 200, 150, 100],
+          backgroundColor: '#ffc107'
+        }]
+      },
+      options: {
+        responsive: true,
+        plugins: {
+          legend: { display: false },
+          title: {
+            display: false
+          }
+        }
+      }
+    });
+
+    const monthlyChart = new Chart(document.getElementById('monthlyChart'), {
+      type: 'line',
+      data: {
+        labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'],
+        datasets: [{
+          label: 'Monthly Transactions',
+          data: [800, 950, 780, 1000, 1200, 900],
+          borderColor: '#007bff',
+          backgroundColor: 'rgba(0,123,255,0.1)',
+          tension: 0.3
+        }]
+      },
+      options: {
+        responsive: true,
+        plugins: {
+          legend: { display: true },
+        }
+      }
+    });
+
+    const pieChart = new Chart(document.getElementById('pieChart'), {
+      type: 'pie',
+      data: {
+        labels: ['Payments', 'Deposits'],
+        datasets: [{
+          data: [65, 35],
+          backgroundColor: ['#28a745', '#17a2b8']
+        }]
+      },
+      options: {
+        responsive: true,
+        plugins: {
+          legend: {
+            position: 'right'
+          }
+        }
+      }
+    });
+  </script>
+</body>
+</html>
