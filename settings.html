@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Settings Page</title>
+  <link rel="stylesheet" href="settings.css" />
+</head>
+<nav class="nav-links">
+    <a href="/home.html" class="nav-item"><span></span> Dashboard</a>
+    <a href="/transactions.html" class="nav-item"><span></span> Transactions</a>
+    <a href="/analysis.html" class="nav-item"><span></span> AI Analysis</a>
+    <a href="/settings.html" class="nav-item  active"><span></span> Settings</a>
+  </nav>
+<body>
+  <div class="container">
+    <div class="header">
+      <h1>Settings</h1>
+      <p>Manage your dashboard preferences and account settings</p>
+    </div>
+
+    <div class="card-grid">
+      <!-- Account Settings Card -->
+      <div class="card">
+        <div class="card-header">
+          <h2>Account Settings</h2>
+          <p class="description">Manage your account information</p>
+        </div>
+        <div class="card-content">
+          <div class="form-group">
+            <label for="name">Name</label>
+            <input id="name" type="text" placeholder="Your name" value="Demo User" />
+          </div>
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input id="email" type="email" placeholder="Your email" value="demo@example.com" />
+          </div>
+          <div class="form-group">
+            <label for="phone">Phone Number</label>
+            <input id="phone" type="text" placeholder="Your phone number" value="+250 78 123 4567" />
+          </div>
+          <button class="btn">Save Changes</button>
+        </div>
+      </div>
+
+      <!-- Preferences Card -->
+      <div class="card">
+        <div class="card-header">
+          <h2>Preferences</h2>
+          <p class="description">Customize your dashboard experience</p>
+        </div>
+        <div class="card-content">
+          <div class="toggle-group">
+            <div>
+              <label for="notifications">Email Notifications</label>
+              <p class="subtext">Receive email notifications about your transactions</p>
+            </div>
+            <input type="checkbox" id="notifications" checked />
+          </div>
+
+          <div class="toggle-group">
+            <div>
+              <label for="currency">Currency</label>
+              <p class="subtext">Choose your preferred currency</p>
+            </div>
+            <select id="currency">
+              <option value="RWF" selected>Rwandan Franc (RWF)</option>
+              <option value="USD">US Dollar (USD)</option>
+              <option value="EUR">Euro (EUR)</option>
+            </select>
+          </div>
+          <button class="btn">Save Preferences</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="settings.js"></script>
+</body>
+</html>
