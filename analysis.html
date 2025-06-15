@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Financial Analysis</title>
+  <link rel="stylesheet" href="analysis.css">
+</head>
+<style>
+  header {
+      background-color: #003366;
+      color: white;
+      padding: 15px 20px;
+      text-align: center;
+      font-size: 1.5em;
+      font-weight: bold;
+    }
+
+    footer {
+      background-color: #003366;
+      color: white;
+      text-align: center;
+      padding: 15px 10px;
+      font-size: 0.9em;
+    }
+  .layout {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: row;
+}
+
+.sidebar {
+  width: 250px;
+  background: #fff;
+  border-right: 1px solid #ddd;
+  padding: 20px;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 30px;
+}
+
+.logo-icon {
+  width: 40px;
+  height: 40px;
+  background: #ffcb05;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.logo-title {
+  font-size: 18px;
+  font-weight: bold;
+  color:rgb(50, 74, 99);
+}
+
+.logo-sub {
+  font-size: 14px;
+  color: #003057;
+}
+
+.menu {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.menu-item {
+  text-decoration: none;
+  color: #003057;
+  padding: 10px;
+  border-radius: 5px;
+  transition: 0.3s;
+}
+
+.menu-item.active,
+.menu-item:hover {
+  background: #ffcb05;
+  color:rgb(2, 26, 46);
+}
+</style>
+<body>
+       <header>MTN MoMo Financial Dashboard</header>
+    <div class="layout">
+    <aside class="sidebar">
+      <div class="logo">
+        <img src="logo.svg" alt="MoMo Logo" class="logo-icon" />
+        <div>
+          <h1 class="logo-title">MoMo</h1>
+          <p class="logo-sub">Dashboard</p>
+        </div>
+      </div>
+      <nav class="menu">
+        <a href="/home.html" class="menu-item">Dashboard</a>
+        <a href="/transactions.html" class="menu-item">Transactions</a>
+        <a href="/analysis.html" class="menu-item  active">AI Analysis</a>
+        <a href="/settings.html" class="menu-item">Settings</a>
+      </nav>
+    </aside>
+
+
+    <section class="card">
+      <header class="card-header">
+        <h2>AI Financial Advisor</h2>
+        <p>Get personalized financial advice based on your transaction data</p>
+      </header>
+      <div class="card-content" id="ai-output">
+        <div class="text-center">
+          <p class="placeholder-text">Click the button to generate a financial analysis (AI output placeholder).</p>
+          <button id="generate-btn" class="btn">Generate Financial Analysis</button>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <footer>
+    &copy; 2025 MTN MoMo. All rights reserved.
+  </footer>
+  <script src="analysis.js"></script>
+</body>
+</html>
